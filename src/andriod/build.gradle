@@ -1,0 +1,6 @@
+dependencies {
+    implementation project(':react-native-video')
+    implementation project(':react-native-webview')
+    implementation project(':react-native-orientation-locker')
+    // ... other dependencies
+}
