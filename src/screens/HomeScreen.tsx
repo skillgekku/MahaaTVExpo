@@ -13,8 +13,8 @@ import { useNavigation } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
 import LinearGradient from 'react-native-linear-gradient';
 // import FastImage from 'react-native-fast-image';
-//import Icon from 'react-native-vector-icons/Ionicons';
-import { RootStackParamList } from '../types';
+import { Ionicons } from '@expo/vector-icons';
+import { RootStackParamList, ChannelConfig } from '../types';
 import { CHANNELS } from '../constants';
 import { useTheme } from '../hooks/useTheme';
 import Header from '../components/Header';
@@ -33,7 +33,7 @@ const HomeScreen = () => {
     setTimeout(() => setRefreshing(false), 2000);
   }, []);
 
-  const handleChannelPress = (channel: any) => {
+  const handleChannelPress = (channel: ChannelConfig) => {
     if (channel.id === 'mahaa-usa') {
       navigation.navigate('Playlist', { channel });
     } else {
@@ -99,7 +99,7 @@ const HomeScreen = () => {
                     
                     {channel.isYoutube && (
                       <View style={styles.youtubeBadge}>
-                 {/*       <Icon name="logo-youtube" size={14} color="#FF0000" /> */}
+                        <Ionicons name="logo-youtube" size={14} color="#FF0000" />
                         <Text style={styles.youtubeBadgeText}>YouTube</Text>
                       </View>
                     )}
@@ -108,7 +108,7 @@ const HomeScreen = () => {
                   <TouchableOpacity 
                     style={[styles.playButton, { backgroundColor: channel.bgGradient[0] }]}
                     onPress={() => handleChannelPress(channel)}>
-                    {/* <Icon name="play" size={20} color="#FFF" /> */}
+                    <Ionicons name="play-outline" size={20} color="#FFF" />
                     <Text style={styles.playButtonText}>
                       {channel.id === 'mahaa-usa' ? 'Browse' : 'Watch'}
                     </Text>
