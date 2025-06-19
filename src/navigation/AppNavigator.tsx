@@ -6,7 +6,7 @@ import { useTheme } from '../hooks/useTheme';
 import HomeScreen from '../screens/HomeScreen';
 import PlayerScreen from '../screens/PlayerScreen';
 import ScheduleScreen from '../screens/ScheduleScreen';
-//import PlaylistScreen from '../screens/PlaylistScreen';
+import PlaylistScreen from '../screens/PlaylistScreen';
 import { RootStackParamList, MainTabParamList } from '../types';
 
 const Stack = createStackNavigator<RootStackParamList>();
@@ -66,13 +66,13 @@ const AppNavigator = () => {
           animation: 'slide_from_bottom',
         }}
       />
-    {/*   <Stack.Screen 
+      <Stack.Screen
         name="Playlist" 
-  //     component={PlaylistScreen}
+        component={PlaylistScreen}
         options={{
           presentation: 'card',
         }}
-      /> */}
+      />
     </Stack.Navigator>
   );
 };
