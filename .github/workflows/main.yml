@@ -1,0 +1,22 @@
+name: Build Android Release APK with Expo
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Build Android Release APK
+        uses: goblin-ihx/action-release-releaseapk@0cd5b22fce90b7090c2733087de7f01436a488de
+        with:
+          # GitHub secret token to allow automated publishing of APK to release
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
